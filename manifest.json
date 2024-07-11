@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Website Blur Extension",
+    "version": "1.0",
+    "description": "Automatically blur websites based on a pre-loaded CSV file",
+    "permissions": ["activeTab", "storage", "https://your-server.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
